@@ -1,0 +1,260 @@
+<!Doctype html>
+<html>
+<head>
+    <title>TFFC Input page</title>
+	<link rel="icon" href="{{ url_for('static',filename ='favicon.ico') }}" />
+		
+    <!-- Animate.css -->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/animate.css') }}"/>
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/icomoon.css') }}"/>
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/simple-line-icons.css') }}"/>
+	<!-- Datetimepicker -->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap-datetimepicker.min.css') }}"/>
+	<!-- Flexslider -->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/flexslider.css') }}"/>
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.css') }}"/>
+
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}"/>
+	
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/tffc.css') }}"/>
+
+
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename = 'js/modernizr-2.6.2.min.js') }}"></script>
+	<script src="{{ url_for('static', filename = 'js/angular/angular.min.js') }}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+	    function readURL(input,id){
+            if (input.files && input.files[0]){
+			    var reader = new FileReader();
+				
+				reader.onload = function (e){
+				alert("Hai");
+			    document.getElementById(id).setAttribute('src', e.target.result);
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+			
+	    function makeCookie(){
+		    document.cookie = "token = ZxadrsbsGgH!@edFGGHSN123779gggTRSRSFSDXjsyX_faTSfgs";
+		}
+		
+		function checkCookie(){
+		    var token = getCookie('token');
+			
+			if (token != null){
+			  //call the react function to hide/display
+                ShowHide();			  
+			}
+			makeCookie();
+		}
+		
+		checkCookie();
+		
+		//Angular Section
+		var app = angular.module('MyApp',[]);
+		app.controller('MyController', function(){
+		   $scope.IsVisible = false;
+		   $scope.IsVisible2 = true;
+		   
+		   $scope.ShowHide = function (){
+		       $scope.IsVisible = $scope.IsVisible ? false : true;
+			   $scope.IsVisible2 = $scope.IsVisible2 ? false : true;
+		   
+		   }
+		});
+	</script>
+
+</head>
+<body style="background-image: url({{ url_for('static', filename = 'images/slide_1.jpg')}})">
+    <div  class="col-lg-12" style="word-wrap: break-word;">
+    <form ng-app="MyApp" ng-controller="MyController" ng-show="IsVisible" role="form" action="{{ url_for('input') }}" method="post">
+        <div class="col-lg-12" >
+             <h2 style="background:#eedddd;font-variant:small-caps; font-type:bold; font-family:courier new; color:brown;">
+				 <span style="background-color:#eeddcc;">
+					 <a href="#" ng-click="ShowHide()"style="text-decoration:none;">The Fresh Feast Corner:</a> 
+				 </span> let your taste buds come experience
+			 </h2>
+             <div class="col-lg-4">
+				 <h2 style="background:#eecccc; font-variant:small-caps; font-type:bold; font-family:courier new; color:black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Specials
+				 </h2>
+			 </div>
+			 <div class="col-lg-8">
+				<h2 style="border-radius:10px; background:#eeddcc; font-variant:small-caps; font-type:bold; font-family:courier new; color:black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quotes
+				</h2>
+			</div>	 
+		</div>
+		<div class="col-lg-12">
+		     <div class="col-lg-2" style="line-height:10px; color:transparent;">
+                 <input class="form-control textInput" placeholder="Special One" name="Special1"/><br/>
+                 <input type="text" class="form-control textInput" placeholder="Special Two" name="Special2"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Special Three" name="Special3"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Special Four" name="Special4"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Special Five" name="Special5"/><br/>
+             </div>
+			 <div class="col-lg-2" style=" line-height:10px; background:transparent;">
+                 <input class="form-control textInput" placeholder="Special One" name="Special6"/><br/>
+                 <input type="text" class="form-control textInput" placeholder="Special Two" name="Special7"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Special Three" name="Special6"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Special Four" name="blogTitle"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Special Five" name="blogTitle"/><br/>
+             </div>
+			 <div class="col-lg-2" style=" line-height:10px;">
+			     <textarea class="form-control" style="height:189px; color:orange; padding-top:10px;"cols="45px" name="qoute1">
+				 </textarea>
+			 </div>
+			 <div class="col-lg-2" style=" line-height:10px;">
+			     <textarea class="form-control" style="height:189px;color:green; padding-top:10px;"cols="45px" name="qoute2">
+				 </textarea>
+			 </div>
+			 <div class="col-lg-2" style=" line-height:10px; background:transparent;">
+                 <textarea class="form-control" style="height:189px;color:white; padding-top:10px;"cols="45px" name="qoute3">
+				 </textarea>
+             </div>
+             <div class="col-lg-2" style=" line-height:10px; background:transparent;">
+                  <textarea class="form-control" style="height:189px;color:cyan; padding-top:10px;"cols="45px" name="qoute4">
+				  </textarea>
+			 </div>
+			 <div class="col-lg-12">
+			     <input type="submit" class="btn btn-default" style="width:100%" value="Submit Details"/>
+			 </div>
+		</div>
+    </form>
+	
+    <form role="form" action="{{ url_for('menuUpload') }}" method="post" enctype="multipart/form-data">		
+		<div class="col-lg-12" style="background:transparent; color:white; line-height:0px; padding-bottom:0px;">
+			<hr/>
+			<h2 style="font-variant:small-caps; font-type:bold; font-family:courier new; color:white;">Menu Bar Items Pictures, Names, Prices 
+			</h2>
+			<input type="submit" class="btn btn-default" value="Submit Menu"/><hr/> 
+			<div class="col-lg-2">
+			    <img width="100%" id='img1' height ="" src="{{ url_for('static', filename ='images/res_img_1.jpg')}}"/>
+				<input type="text" class="form-control textInput" placeholder="Food Name" name="foodName1"/><br/>
+				<input type="text" class="form-control textInput" placeholder="Food Price" name="price1"/>
+				<Input  name='img1' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img1');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img2" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_2.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName2"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price2"/><br/>
+				 <Input name='img2'type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img2');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img3" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_3.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName3"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price3"/>
+				 <Input name='img3' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img3');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img4" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_4.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName4"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price4"/>
+				 <Input enctype="multipart/form-data" name='img4' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img4');"/>
+			</div>
+			<div class="col-lg-2">
+			   <img id="img5"width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_1.jpg')}}"/>
+			   <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName5"/><br/>
+			   <input type="text" class="form-control textInput" placeholder="Food Price" name="price5"/>
+			   <Input  name='img5' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img5');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img6" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_3.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName6"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price6"/>
+				 <Input name='img6' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img6');"/>
+			</div>
+		</div>		
+    
+	    <div class="col-lg-12" style="background:transparent; color:white; line-height:0px; padding-bottom:0px;">
+			<div class="col-lg-2">
+			    <img id="img7" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_1.jpg')}}"/>
+				<input type="text" class="form-control textInput" placeholder="Food Name" name="foodName7"/><br/>
+				<input type="text" class="form-control textInput" placeholder="Food Price" name="price7"/>
+				<Input name='img7' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img7');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img8" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_2.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName8"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price8"/><br/>
+				 <Input  name='img8' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img8');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img9" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_3.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName9"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price9"/>
+				 <Input  name='img9' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img9');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img10" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_4.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName10"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price10"/>
+				 <Input enctype="multipart/form-data" name='img10' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img10');"/>
+			</div>
+			<div class="col-lg-2">
+			   <img id="img11" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_1.jpg')}}"/>
+			   <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName11"/><br/>
+			   <input type="text" class="form-control textInput" placeholder="Food Price" name="price11"/>
+			   <Input name='img11'type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img11');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img12" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_3.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName12"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price12"/>
+				 <Input name='img12' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img12');"/>
+			</div>
+		</div>		
+    </form>
+	
+    <form role="form" action="" method="post">
+		<div class="col-lg-12" style="background:gray; color:white; line-height:0px; padding-bottom:0px;">
+			<div class="col-lg-2">
+			    <img id="img13" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_1.jpg')}}"/>
+				<input type="text" class="form-control textInput" placeholder="Food Name" name="foodName13"/><br/>
+				<input type="text" class="form-control textInput" placeholder="Food Price" name="price13"/>
+				<Input name='img13'type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img13');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img14" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_2.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food NameZoop" name="foodName14"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price14"/><br/>
+				 <Input name='img14'type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img14');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img15" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_3.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName15"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price15"/>
+				 <Input  name='img15' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img15');"/>
+			</div>
+			<div class="col-lg-2">
+			     <img id="img16" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_4.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName16"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price16"/>
+				 <Input name='img16'type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img16');"/>
+			</div>
+			<div class="col-lg-2">
+			   <img id="img17" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_1.jpg')}}"/>
+			   <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName17"/><br/>
+			   <input type="text" class="form-control textInput" placeholder="Food Price" name="price17"/>
+			   <Input name='img17'type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img17');"/>
+			</div>
+			<div  class="col-lg-2">
+			     <img id="img18" width="100%" height ="" src="{{ url_for('static', filename ='images/res_img_3.jpg')}}"/>
+				 <input type="text" class="form-control textInput" placeholder="Food Name" name="foodName18"/><br/>
+				 <input type="text" class="form-control textInput" placeholder="Food Price" name="price18"/>
+				 <Input name='img18' type ="file" class="btn-danger form-control textInput" text="Change Image" onchange="readURL(this,'img18');"/>
+			</div>
+		</div>
+	</form>
+</div>
+
+    <!--script type="text/javascript" src="{{ url_for('static', filename = 'js/jquery-ui.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/date.js')}}"></script-->
+</body>
+</html>
