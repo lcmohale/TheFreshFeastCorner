@@ -1,0 +1,15 @@
+.textInput{
+   height:30px;
+   border-radius:1px;
+   font-variant:small-caps;
+   font-family:courier new;
+   margin:0px;
+   padding-top:0px;
+   padding-bottom:0px;
+   color:white;
+}
+h3{
+   font-family:cooper black;
+   font-size:19pt;
+   font-variant:small-caps;
+}
