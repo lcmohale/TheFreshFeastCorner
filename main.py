@@ -58,7 +58,7 @@ def menuUpload():
     f4.save(target + 'res_img_4.jpg')
     f5.save(target + 'res_img_5.jpg')
 	
-	db.execute("INSERT INTO MenuData ('foodName','imgRef','Price') VALUES (:foodName,:imgRef,:Price)", foodName = request.form['foodName1'],imgRef = request.form['imgRef'],Price = request.form['price1'])
+	#db.execute("INSERT INTO MenuData ('foodName','imgRef','Price') VALUES (:foodName,:imgRef,:Price)", foodName = request.form['foodName1'],imgRef = request.form['imgRef'],Price = request.form['price1'])
 	
 	
 	
